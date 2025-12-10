@@ -13,12 +13,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CriarPensamento {
 
-  pensamento: PensamentoInterface = {
-
-    conteudo: '',
-    autoria: '',
-    modelo: ''
-  }
 
   formulario!: FormGroup;
 
@@ -29,9 +23,8 @@ export class CriarPensamento {
   ){}
 
   criarPensamento(){
-    this.service.cadastrar(this.pensamento).subscribe(() =>{
+    this.service.cadastrar(this.formulario.value).subscribe(() =>{
       this.router.navigate(['listarPensamento'])
-      alert(this.pensamento.autoria + " Pensamento salvo!")
     })
   }
 
