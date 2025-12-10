@@ -29,17 +29,13 @@ export class CriarPensamento {
       this.service.cadastrar(this.formulario.value).subscribe(() =>{
         this.router.navigate(['listarPensamento'])
       })
-    }else{
-      alert("valor invalido")
     }
   }
 
   excluirPensamento(){
-    alert("voltou")
   }
 
   ngOnInit(){
-    console.log("testes")
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([
         Validators.required,

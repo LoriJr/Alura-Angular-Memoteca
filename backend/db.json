@@ -4,7 +4,7 @@
       "id": "f601",
       "conteudo": "Aprendendo Angular",
       "autoria": "Dev",
-      "modelo": "modelo3"
+      "modelo": "modelo1"
     },
     {
       "id": "f969",
@@ -13,21 +13,9 @@
       "modelo": "modelo2"
     },
     {
-      "id": "b65a",
-      "conteudo": "teste",
-      "autoria": "Juninho",
-      "modelo": "modelo1"
-    },
-    {
       "id": "d90e",
       "conteudo": "Hoje é dia de aprender Java também",
       "autoria": "dev",
-      "modelo": "modelo3"
-    },
-    {
-      "id": "b54e",
-      "conteudo": "Que ventania",
-      "autoria": "jovem aprendiz",
       "modelo": "modelo3"
     },
     {
@@ -35,6 +23,18 @@
       "conteudo": "Mais um dia só em treinamento",
       "autoria": "LouJunior",
       "modelo": "modelo2"
+    },
+    {
+      "id": "2137",
+      "conteudo": "Resolvendo bugs sozinho, com a ajuda da ia",
+      "autoria": "Junior",
+      "modelo": "modelo2"
+    },
+    {
+      "id": "1dbf",
+      "conteudo": "Não vejo a hora de encarar os desafios da área de sustentação",
+      "autoria": "lourival",
+      "modelo": "modelo1"
     }
   ]
 }

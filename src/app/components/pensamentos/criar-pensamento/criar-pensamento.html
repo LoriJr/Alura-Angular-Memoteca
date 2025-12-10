@@ -4,7 +4,7 @@
     <form [formGroup]="formulario" >
       <label for="pensamento">Pensamento</label>
         <input
-          type="text-area"
+          type="textarea"
           class="input"
           id="pensamento"
           formControlName="conteudo"
@@ -101,9 +101,7 @@
         <div class="acoes">
           <button [disabled]="!formulario.valid"
            (click)="criarPensamento()"
-           [ngClass]="habilitarBotao()">
-            Salvar
-          </button>
+           [ngClass]="habilitarBotao()">Salvar</button>
           <button (click)="excluirPensamento()" routerLink="/listarPensamento" class="botao">Cancelar</button>
         </div>
     </form>

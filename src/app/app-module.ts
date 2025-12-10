@@ -32,7 +32,7 @@ import { EditarPensamento } from './components/pensamentos/editar-pensamento/edi
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
