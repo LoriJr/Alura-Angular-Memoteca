@@ -23,12 +23,14 @@ export class CriarPensamento {
   ){}
 
   criarPensamento(){
-    console.log(this.formulario)
+    console.log(this.formulario.status)
 
     if(this.formulario.valid){
       this.service.cadastrar(this.formulario.value).subscribe(() =>{
         this.router.navigate(['listarPensamento'])
       })
+    }else{
+      alert("valor invalido")
     }
   }
 
@@ -37,9 +39,16 @@ export class CriarPensamento {
   }
 
   ngOnInit(){
+    console.log("testes")
     this.formulario = this.formBuilder.group({
-      conteudo: ['', [Validators.required]],
-      autoria: ['', [Validators.required]],
+      conteudo: ['', Validators.compose([
+        Validators.required,
+        Validators.pattern(/(.|\s)*\S(.|\s)*/),
+      ])],
+      autoria: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(3)
+      ])],
       modelo: ['modelo1']
     });
   }
