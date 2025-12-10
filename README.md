@@ -59,9 +59,14 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-- #### Branch feature-formulario-reativo
+- ### Branch feature-formulario-reativo
 
 - Criar um formulário reativo através da classe FormBuilder;
 - Associar o formulário criado no component ao template através da diretiva formGroup;
 - Utilizar a diretiva formControlName para associar os inputs do formulário;
 - Acessar os valores dos campos do formulário no template com o método get.
+- Implementar validações nos campos do formulário através da classe Validators;
+- Identificar os tipos de erros que ocorreram nas validações;
+- Exibir mensagens de erro customizadas;
+- Mostrar mensagens de erro apenas quando o campo for acessado;
+- Habilitar/desabilitar o botão de salvar de acordo com o status do formulário.
