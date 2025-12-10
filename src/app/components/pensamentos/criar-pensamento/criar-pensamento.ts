@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { PensamentoInterface } from '../pensamentoInterface';
 import { PensamentoService } from '../pensamento.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -23,9 +23,13 @@ export class CriarPensamento {
   ){}
 
   criarPensamento(){
-    this.service.cadastrar(this.formulario.value).subscribe(() =>{
-      this.router.navigate(['listarPensamento'])
-    })
+    console.log(this.formulario)
+
+    if(this.formulario.valid){
+      this.service.cadastrar(this.formulario.value).subscribe(() =>{
+        this.router.navigate(['listarPensamento'])
+      })
+    }
   }
 
   excluirPensamento(){
@@ -34,8 +38,8 @@ export class CriarPensamento {
 
   ngOnInit(){
     this.formulario = this.formBuilder.group({
-      conteudo: ['Formulário reativo'],
-      autoria: [''],
+      conteudo: ['', [Validators.required]],
+      autoria: ['', [Validators.required]],
       modelo: ['modelo1']
     });
   }
