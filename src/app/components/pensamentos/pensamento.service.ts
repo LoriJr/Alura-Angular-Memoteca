@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { PensamentoInterface } from './pensamentoInterface';
 import { Observable } from 'rxjs';
@@ -14,11 +14,14 @@ export class PensamentoService {
   constructor(private http: HttpClient){ }
 
   listar(pagina: number): Observable<PensamentoInterface[]>{
-    //GET /posts?_page=1&_per_page=25
 
     const itensPorPagina = 6;
 
-    return this.http.get<PensamentoInterface[]>(`${this.API}?_page=${pagina}&_limit=${itensPorPagina}`)
+    let params = new HttpParams()
+      .set("_page", pagina)
+      .set("_limit", itensPorPagina);
+
+    return this.http.get<PensamentoInterface[]>(this.API, {params})
   }
 
   cadastrar(pensamento: PensamentoInterface): Observable<PensamentoInterface>{

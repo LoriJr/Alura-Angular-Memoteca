@@ -19,8 +19,6 @@ export class ListarPensamento implements OnInit{
 
   ngOnInit(): void{
 
-
-
     this.listaPensamentos$ = this.service.listar(this.paginaAtual).pipe(
       tap((dados) => console.log('DADOS NO PIPE:', dados)),
 
