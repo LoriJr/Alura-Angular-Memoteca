@@ -13,8 +13,12 @@ export class PensamentoService {
 
   constructor(private http: HttpClient){ }
 
-  listar(): Observable<PensamentoInterface[]>{
-    return this.http.get<PensamentoInterface[]>(this.API)
+  listar(pagina: number): Observable<PensamentoInterface[]>{
+    //GET /posts?_page=1&_per_page=25
+
+    const itensPorPagina = 6;
+
+    return this.http.get<PensamentoInterface[]>(`${this.API}?_page=${pagina}&_limit=${itensPorPagina}`)
   }
 
   cadastrar(pensamento: PensamentoInterface): Observable<PensamentoInterface>{

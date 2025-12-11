@@ -13,11 +13,15 @@ import { PensamentoService } from '../pensamento.service';
 export class ListarPensamento implements OnInit{
 
   listaPensamentos$!: Observable<PensamentoInterface[]>;
+  paginaAtual: number = 1;
 
   constructor(private service: PensamentoService){}
 
   ngOnInit(): void{
-    this.listaPensamentos$ = this.service.listar().pipe(
+
+
+
+    this.listaPensamentos$ = this.service.listar(this.paginaAtual).pipe(
       tap((dados) => console.log('DADOS NO PIPE:', dados)),
 
       catchError((error) => {

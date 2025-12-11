@@ -9,7 +9,7 @@
     {
       "id": "f969",
       "conteudo": "Hoje vamos iniciar o projeto para atender a demanda da vivo",
-      "autoria": "Lou",
+      "autoria": "Analista de Sistemas",
       "modelo": "modelo2"
     },
     {
@@ -21,19 +21,25 @@
     {
       "id": "a6f1",
       "conteudo": "Mais um dia só em treinamento",
-      "autoria": "LouJunior",
+      "autoria": "Analista Treinee ",
       "modelo": "modelo2"
     },
     {
       "id": "2137",
-      "conteudo": "Resolvendo bugs sozinho, com a ajuda da ia",
-      "autoria": "Junior Silva",
+      "conteudo": "Resolvendo bugs em código",
+      "autoria": "Desenvolvedor Junior",
       "modelo": "modelo2"
     },
     {
       "id": "1dbf",
       "conteudo": "Não vejo a hora de encarar os desafios da área de sustentação",
-      "autoria": "lourival",
+      "autoria": "Técnico de suporte",
+      "modelo": "modelo1"
+    },
+    {
+      "id": "3ce1",
+      "conteudo": "Que dia lindo, pena que está uma ventania muito forte",
+      "autoria": "Morador de São Bernardo do Campo",
       "modelo": "modelo1"
     }
   ]
