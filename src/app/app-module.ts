@@ -12,6 +12,7 @@ import { Pensamento } from './components/pensamentos/pensamento/pensamento';
 import { provideHttpClient } from '@angular/common/http';
 import { ExcluirPensamento } from './components/pensamentos/excluir-pensamento/excluir-pensamento';
 import { EditarPensamento } from './components/pensamentos/editar-pensamento/editar-pensamento';
+import { BotaoCarregarMais } from './components/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais';
 
 
 
@@ -26,7 +27,8 @@ import { EditarPensamento } from './components/pensamentos/editar-pensamento/edi
     ListarPensamento,
     Pensamento,
     ExcluirPensamento,
-    EditarPensamento
+    EditarPensamento,
+    BotaoCarregarMais
   ],
   imports: [
     BrowserModule,
