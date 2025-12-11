@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { PensamentoInterface } from './pensamentoInterface';
 import { Observable } from 'rxjs';
 import { Pensamento } from './pensamento/pensamento';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -19,9 +20,14 @@ export class PensamentoService {
 
     let params = new HttpParams()
       .set("_page", pagina)
-      .set("_limit", itensPorPagina);
+      .set("_per_page", itensPorPagina);
 
-    return this.http.get<PensamentoInterface[]>(this.API, {params})
+    return this.http.get<any>(this.API, {params}).pipe(map((retorno) => {
+      if(retorno.data){
+        return retorno.data
+      }
+      return retorno;
+    }))
   }
 
   cadastrar(pensamento: PensamentoInterface): Observable<PensamentoInterface>{

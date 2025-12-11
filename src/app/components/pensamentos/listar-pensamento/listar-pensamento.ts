@@ -4,6 +4,7 @@ import { PensamentoInterface } from '../pensamentoInterface';
 import { PensamentoService } from '../pensamento.service';
 
 
+
 @Component({
   selector: 'app-listar-pensamento',
   standalone: false,
@@ -12,21 +13,34 @@ import { PensamentoService } from '../pensamento.service';
 })
 export class ListarPensamento implements OnInit{
 
-  listaPensamentos$!: Observable<PensamentoInterface[]>;
+  listaPensamentos: PensamentoInterface[]=[];
   paginaAtual: number = 1;
+  haMaisPensamentos: boolean = true;
+  carregandoMensagem: boolean = true;
 
   constructor(private service: PensamentoService){}
 
-  ngOnInit(): void{
+  ngOnInit(){
 
-    this.listaPensamentos$ = this.service.listar(this.paginaAtual).pipe(
-      tap((dados) => console.log('DADOS NO PIPE:', dados)),
+    //TODO - listar pensamentos na tela de inicialização
+    this.service.listar(this.paginaAtual).subscribe((listaPensamentos) =>{
+      this.listaPensamentos = listaPensamentos;
+      this.carregandoMensagem = false;
+    })
+  }
 
-      catchError((error) => {
-        console.error('ERRO NA REQUISIÇÃO', error);
-        alert('Erro ao buscar dados. Verifique o console');
-        return of ([]);
+  carregarMaisPensamentos(){
+     this.service.listar(++this.paginaAtual).subscribe(listaNovosPensamentos => {
+
+      const itensNovos = listaNovosPensamentos.filter(novoPensamento =>{
+        return !this.listaPensamentos.some(existente => existente.id === novoPensamento.id)
       })
-    );
+          if(itensNovos.length > 0){
+            this.listaPensamentos.push(...listaNovosPensamentos);
+            this.haMaisPensamentos = false;
+          }else{
+            this.haMaisPensamentos = false;
+          }
+      })
   }
 }

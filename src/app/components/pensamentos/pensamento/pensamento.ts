@@ -11,12 +11,7 @@ import { PensamentoInterface } from '../pensamentoInterface';
 })
 export class Pensamento {
 
-  @Input() pensamento: PensamentoInterface = {
-    id: 0,
-    conteudo: 'I love Angular',
-    autoria: 'LouJunior',
-    modelo: 'modelo3'
-  }
+  @Input() pensamento!: PensamentoInterface;
 
   larguraPensamento(): string{
     if(this.pensamento.conteudo.length >= 256){
