@@ -32,9 +32,6 @@ export class CriarPensamento {
     }
   }
 
-  excluirPensamento(){
-  }
-
   ngOnInit(){
     this.formulario = this.formBuilder.group({
       conteudo: ['', Validators.compose([

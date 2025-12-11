@@ -62,11 +62,6 @@ export class EditarPensamento {
       this.service.editar(this.formulario.value).subscribe(() => {
         this.router.navigate(["listarPensamento"])
       })
-
     }
-  }
-
-  excluirPensamento(){
-    this.router.navigate(["/listarPensamento"])
   }
 }

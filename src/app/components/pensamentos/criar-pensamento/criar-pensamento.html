@@ -102,7 +102,7 @@
           <button [disabled]="!formulario.valid"
            (click)="criarPensamento()"
            [ngClass]="habilitarBotao()">Salvar</button>
-          <button (click)="excluirPensamento()" routerLink="/listarPensamento" class="botao">Cancelar</button>
+          <button routerLink="/listarPensamento" class="botao">Cancelar</button>
         </div>
     </form>
   </header>
