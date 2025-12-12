@@ -21,7 +21,7 @@ export class PensamentoService {
     let params = new HttpParams()
       .set("_page", pagina)
       .set("_per_page", itensPorPagina);
-
+      
     return this.http.get<any>(this.API, {params}).pipe(map((retorno) => {
       if(retorno.data){
         return retorno.data

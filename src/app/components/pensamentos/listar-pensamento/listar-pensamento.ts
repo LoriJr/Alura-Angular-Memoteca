@@ -1,4 +1,3 @@
-import { Observable, catchError, of, tap } from 'rxjs';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PensamentoInterface } from '../pensamentoInterface';
 import { PensamentoService } from '../pensamento.service';
@@ -38,15 +37,20 @@ export class ListarPensamento implements OnInit{
   carregarMaisPensamentos(){
      this.service.listar(++this.paginaAtual).subscribe(listaNovosPensamentos => {
 
+      // Filtramos a lista que chegou: Só queremos itens cujo ID NÃO esteja na lista atual
       const itensNovos = listaNovosPensamentos.filter(novoPensamento =>{
+        // O método .some() retorna true se encontrar alguém igual.
+        // O ! na frente inverte: só passa se NÃO encontrar ninguém igual.
         return !this.listaPensamentos.some(existente => existente.id === novoPensamento.id)
       })
           if(itensNovos.length > 0){
-            this.listaPensamentos.push(...listaNovosPensamentos);
-            this.haMaisPensamentos = false;
-          }else{
-            this.haMaisPensamentos = false;
+            this.listaPensamentos.push(...itensNovos);
           }
+          if (!listaNovosPensamentos.length || itensNovos.length < 6) {
+          this.haMaisPensamentos = false;
+        }
+
+        this.cdr.detectChanges();
       })
   }
 }
