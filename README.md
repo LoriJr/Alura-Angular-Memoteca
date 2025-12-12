@@ -77,3 +77,10 @@ For more information on using the Angular CLI, including detailed command refere
 - Implementar paginação dos dados;
 - Criar um componente botão para carregar os pensamentos sob demanda;
 - Realizar a comunicação entre componentes.
+
+### Branch feature-campo-de-busca
+
+- Criar um campo de busca;
+- Implementar a funcionalidade de filtrar pensamentos;
+- Mostrar pensamentos filtrados dinamicamente à medida que o filtro é digitado.
+- Uso da bibliotecas debounceTime para melhoria de performance na consulta.
