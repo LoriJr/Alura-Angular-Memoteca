@@ -28,13 +28,16 @@ export class ListarPensamento implements OnInit{
     this.service.listar(this.paginaAtual).subscribe((listaPensamentos) =>{
       this.listaPensamentos = listaPensamentos;
       this.carregandoMensagem = false;
-
       this.cdr.detectChanges();
-      console.log('Dados atualizados e tela forçada a renderizar');
     })
   }
 
   carregarMaisPensamentos(){
+
+    if(!this.haMaisPensamentos){
+      return;
+    }
+
      this.service.listar(++this.paginaAtual).subscribe(listaNovosPensamentos => {
 
       // Filtramos a lista que chegou: Só queremos itens cujo ID NÃO esteja na lista atual
@@ -49,7 +52,6 @@ export class ListarPensamento implements OnInit{
           if (!listaNovosPensamentos.length || itensNovos.length < 6) {
           this.haMaisPensamentos = false;
         }
-
         this.cdr.detectChanges();
       })
   }

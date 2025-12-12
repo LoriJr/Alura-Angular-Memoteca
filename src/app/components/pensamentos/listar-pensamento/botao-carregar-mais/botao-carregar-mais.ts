@@ -6,16 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './botao-carregar-mais.html',
   styleUrl: './botao-carregar-mais.css',
 })
-export class BotaoCarregarMais implements OnInit{
+export class BotaoCarregarMais{
 
   @Input() haMaisPensamentos: boolean = false;
-
-  ConstructorParameters(){
-
-  }
-
-  ngOnInit(): void {
-
-  }
 
 }
