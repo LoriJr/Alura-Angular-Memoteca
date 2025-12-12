@@ -4,12 +4,12 @@
       "id": "f601",
       "conteudo": "Aprendendo Angular",
       "autoria": "Dev",
-      "modelo": "modelo3"
+      "modelo": "modelo1"
     },
     {
       "id": "f969",
       "conteudo": "Hoje vamos iniciar o projeto para atender a demanda da vivo",
-      "autoria": "Analista de Sistemas",
+      "autoria": "Lou",
       "modelo": "modelo2"
     },
     {
@@ -21,25 +21,31 @@
     {
       "id": "a6f1",
       "conteudo": "Mais um dia só em treinamento",
-      "autoria": "Analista Treinee ",
+      "autoria": "LouJunior",
       "modelo": "modelo2"
     },
     {
       "id": "2137",
-      "conteudo": "Resolvendo bugs em código",
-      "autoria": "Desenvolvedor Junior",
+      "conteudo": "Resolvendo bugs sozinho, com a ajuda da ia",
+      "autoria": "Junior",
       "modelo": "modelo2"
     },
     {
       "id": "1dbf",
       "conteudo": "Não vejo a hora de encarar os desafios da área de sustentação",
-      "autoria": "Técnico de suporte",
+      "autoria": "lourival",
       "modelo": "modelo1"
     },
     {
-      "id": "3ce1",
-      "conteudo": "Que dia lindo, pena que está uma ventania muito forte",
-      "autoria": "Morador de São Bernardo do Campo",
+      "id": "8e28",
+      "conteudo": "Pensando em ir viajar para algum lugar, não sei onde",
+      "autoria": "Mochileiro",
+      "modelo": "modelo3"
+    },
+    {
+      "id": "4d24",
+      "conteudo": "Está ficando difícil codar",
+      "autoria": "Estudante iniciante",
       "modelo": "modelo1"
     }
   ]
