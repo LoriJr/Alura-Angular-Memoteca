@@ -19,6 +19,7 @@ export class ListarPensamento implements OnInit{
   haMaisPensamentos: boolean = true;
   carregandoMensagem: boolean = true;
   filtro: string =''
+  termoBusca: Subject<string> = new Subject<string>();
 
   constructor(
     private service: PensamentoService,
@@ -27,12 +28,26 @@ export class ListarPensamento implements OnInit{
 
   ngOnInit(){
 
-    //TODO - listar pensamentos na tela de inicialização
-    this.service.listar(this.paginaAtual, this.filtro).subscribe((listaPensamentos) =>{
-      this.listaPensamentos = listaPensamentos;
+    this.carregarDadosIniciais();
+
+    this.termoBusca.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap(termo => {
+        this.filtro = termo;
+        this.paginaAtual = 1;
+        this.carregandoMensagem = true;
+        this.haMaisPensamentos = true;
+
+        return this.service.listar(this.paginaAtual, this.filtro);
+      })
+    )
+    .subscribe(lista =>{
+      this.listaPensamentos = lista;
       this.carregandoMensagem = false;
       this.cdr.detectChanges();
     })
+
   }
 
   carregarMaisPensamentos(){
@@ -70,5 +85,18 @@ export class ListarPensamento implements OnInit{
         this.haMaisPensamentos = false;
         this.cdr.detectChanges();
       })
+  }
+
+  carregarDadosIniciais(){
+    this.service.listar(this.paginaAtual, '').subscribe((listaPensamentos) =>{
+      this.listaPensamentos = listaPensamentos;
+      this.carregandoMensagem = false;
+      this.cdr.detectChanges();
+    })
+  }
+
+  pesquisar(evento: any){
+    const valor = evento.target.value;
+    this.termoBusca.next(valor);
   }
 }
