@@ -1,5 +1,5 @@
 import { Observable, catchError, of, tap } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { PensamentoInterface } from '../pensamentoInterface';
 import { PensamentoService } from '../pensamento.service';
 
@@ -18,7 +18,10 @@ export class ListarPensamento implements OnInit{
   haMaisPensamentos: boolean = true;
   carregandoMensagem: boolean = true;
 
-  constructor(private service: PensamentoService){}
+  constructor(
+    private service: PensamentoService,
+    private cdr: ChangeDetectorRef
+  ){}
 
   ngOnInit(){
 
@@ -26,6 +29,9 @@ export class ListarPensamento implements OnInit{
     this.service.listar(this.paginaAtual).subscribe((listaPensamentos) =>{
       this.listaPensamentos = listaPensamentos;
       this.carregandoMensagem = false;
+
+      this.cdr.detectChanges();
+      console.log('Dados atualizados e tela forçada a renderizar');
     })
   }
 
