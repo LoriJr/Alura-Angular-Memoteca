@@ -72,12 +72,6 @@ input[type="search"]::-webkit-search-cancel-button {
   border-radius: 10px;
 }
 
-@media screen and (min-width: 216px) {
-  .buscar-pensamentos {
-    width: 250px;
-  }
-}
-
 @media screen and (min-width: 396px) {
   .buscar-pensamentos {
     width: 380px;

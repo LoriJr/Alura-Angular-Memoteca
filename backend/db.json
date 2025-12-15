@@ -4,49 +4,57 @@
       "id": "f601",
       "conteudo": "Aprendendo Angular",
       "autoria": "Dev",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": "f969",
       "conteudo": "Hoje vamos iniciar o projeto para atender a demanda da vivo",
       "autoria": "Lou",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": "d90e",
       "conteudo": "Hoje é dia de aprender Java também",
       "autoria": "dev",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": "a6f1",
       "conteudo": "Mais um dia só em treinamento",
       "autoria": "LouJunior",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": "2137",
       "conteudo": "Resolvendo bugs sozinho, com a ajuda da ia",
       "autoria": "Junior",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": "1dbf",
       "conteudo": "Não vejo a hora de encarar os desafios da área de sustentação",
       "autoria": "lourival",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": "8e28",
       "conteudo": "Pensando em ir viajar para algum lugar, não sei onde",
       "autoria": "Mochileiro",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": "4d24",
       "conteudo": "Está ficando difícil codar",
       "autoria": "Estudante iniciante",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     }
   ]
 }

@@ -13,10 +13,20 @@ export class Pensamento {
 
   @Input() pensamento!: PensamentoInterface;
 
+
+
   larguraPensamento(): string{
     if(this.pensamento.conteudo.length >= 256){
       return 'pensamento-g'
     }
     return 'pensamento-p'
   }
+
+  alternarFavorito(): string{
+    if(this.pensamento.favorito == false){
+      return 'inativo';
+    }
+    return 'ativo'
+  }
+
 }
