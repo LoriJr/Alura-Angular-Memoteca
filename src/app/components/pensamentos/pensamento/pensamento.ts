@@ -1,6 +1,7 @@
 
 import { Component, Input} from '@angular/core';
 import { PensamentoInterface } from '../pensamentoInterface';
+import { PensamentoService } from '../pensamento.service';
 
 
 @Component({
@@ -9,11 +10,12 @@ import { PensamentoInterface } from '../pensamentoInterface';
   templateUrl: './pensamento.html',
   styleUrl: './pensamento.css',
 })
+
 export class Pensamento {
 
+  constructor(private service: PensamentoService){}
+
   @Input() pensamento!: PensamentoInterface;
-
-
 
   larguraPensamento(): string{
     if(this.pensamento.conteudo.length >= 256){
@@ -22,11 +24,18 @@ export class Pensamento {
     return 'pensamento-p'
   }
 
-  alternarFavorito(): string{
+  alternarIconeFavorito(): string{
     if(this.pensamento.favorito == false){
       return 'inativo';
     }
     return 'ativo'
+  }
+
+  atualizarFavorito(){
+    this.service.mudarFavorito(this.pensamento).subscribe();
+    console.log(this.pensamento.favorito)
+
+
   }
 
 }

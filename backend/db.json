@@ -12,28 +12,28 @@
       "conteudo": "Hoje vamos iniciar o projeto para atender a demanda da vivo",
       "autoria": "Lou",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": "d90e",
       "conteudo": "Hoje é dia de aprender Java também",
       "autoria": "dev",
       "modelo": "modelo3",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": "a6f1",
       "conteudo": "Mais um dia só em treinamento",
       "autoria": "LouJunior",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": "2137",
       "conteudo": "Resolvendo bugs sozinho, com a ajuda da ia",
       "autoria": "Junior",
       "modelo": "modelo2",
-      "favorito": false
+      "favorito": true
     },
     {
       "id": "1dbf",
