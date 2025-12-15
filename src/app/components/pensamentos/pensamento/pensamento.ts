@@ -17,6 +17,8 @@ export class Pensamento {
 
   @Input() pensamento!: PensamentoInterface;
 
+  @Input() listaFavoritos: PensamentoInterface[] = []
+
   larguraPensamento(): string{
     if(this.pensamento.conteudo.length >= 256){
       return 'pensamento-g'
@@ -32,10 +34,9 @@ export class Pensamento {
   }
 
   atualizarFavorito(){
-    this.service.mudarFavorito(this.pensamento).subscribe();
-    console.log(this.pensamento.favorito)
-
-
+    this.service.mudarFavorito(this.pensamento).subscribe(()=>{
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1)
+    });
   }
 
 }

@@ -21,6 +21,7 @@ export class ListarPensamento implements OnInit{
   filtro: string =''
   favoritos: boolean = false
   termoBusca: Subject<string> = new Subject<string>();
+  listaFavoritos: PensamentoInterface[] = []
 
   constructor(
     private service: PensamentoService,
@@ -110,6 +111,7 @@ export class ListarPensamento implements OnInit{
     this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
     .subscribe(listaPensamentosFavoritos => {
       this.listaPensamentos = listaPensamentosFavoritos;
+      this.listaFavoritos = listaPensamentosFavoritos;
     })
   }
 }
