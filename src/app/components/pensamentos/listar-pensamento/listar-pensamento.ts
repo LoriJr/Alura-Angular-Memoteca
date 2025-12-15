@@ -99,4 +99,15 @@ export class ListarPensamento implements OnInit{
     const valor = evento.target.value;
     this.termoBusca.next(valor);
   }
+
+  listarFavoritos(){
+    this.paginaAtual = 1;
+    this.haMaisPensamentos = true;
+    this.carregandoMensagem = true;
+
+    this.service.listarPensamentosFavoritos(this.paginaAtual, this.filtro)
+    .subscribe(listaPensamentosFavoritos => {
+      this.listaPensamentos = listaPensamentosFavoritos;
+    })
+  }
 }
