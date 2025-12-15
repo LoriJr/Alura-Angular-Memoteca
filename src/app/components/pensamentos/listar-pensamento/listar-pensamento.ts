@@ -19,6 +19,7 @@ export class ListarPensamento implements OnInit{
   haMaisPensamentos: boolean = true;
   carregandoMensagem: boolean = true;
   filtro: string =''
+  favoritos: boolean = false
   termoBusca: Subject<string> = new Subject<string>();
 
   constructor(
@@ -39,7 +40,7 @@ export class ListarPensamento implements OnInit{
         this.carregandoMensagem = true;
         this.haMaisPensamentos = true;
 
-        return this.service.listar(this.paginaAtual, this.filtro);
+        return this.service.listar(this.paginaAtual, this.filtro, this.favoritos);
       })
     )
     .subscribe(lista =>{
@@ -56,7 +57,7 @@ export class ListarPensamento implements OnInit{
       return;
     }
 
-     this.service.listar(++this.paginaAtual, this.filtro).subscribe(listaNovosPensamentos => {
+     this.service.listar(++this.paginaAtual, this.filtro, this.favoritos).subscribe(listaNovosPensamentos => {
 
       // Filtramos a lista que chegou: Só queremos itens cujo ID NÃO esteja na lista atual
       const itensNovos = listaNovosPensamentos.filter(novoPensamento =>{
@@ -79,7 +80,7 @@ export class ListarPensamento implements OnInit{
     this.haMaisPensamentos = true;
     this.carregandoMensagem = true;
 
-    this.service.listar(this.paginaAtual, this.filtro)
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
       .subscribe(lista => {
         this.listaPensamentos = lista;
         this.haMaisPensamentos = false;
@@ -88,7 +89,7 @@ export class ListarPensamento implements OnInit{
   }
 
   carregarDadosIniciais(){
-    this.service.listar(this.paginaAtual, '').subscribe((listaPensamentos) =>{
+    this.service.listar(this.paginaAtual, '', this.favoritos).subscribe((listaPensamentos) =>{
       this.listaPensamentos = listaPensamentos;
       this.carregandoMensagem = false;
       this.cdr.detectChanges();
@@ -104,8 +105,9 @@ export class ListarPensamento implements OnInit{
     this.paginaAtual = 1;
     this.haMaisPensamentos = true;
     this.carregandoMensagem = true;
+    this.favoritos = true;
 
-    this.service.listarPensamentosFavoritos(this.paginaAtual, this.filtro)
+    this.service.listar(this.paginaAtual, this.filtro, this.favoritos)
     .subscribe(listaPensamentosFavoritos => {
       this.listaPensamentos = listaPensamentosFavoritos;
     })
