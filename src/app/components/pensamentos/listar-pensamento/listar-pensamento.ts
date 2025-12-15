@@ -3,6 +3,7 @@ import { PensamentoInterface } from '../pensamentoInterface';
 import { PensamentoService } from '../pensamento.service';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 
@@ -22,10 +23,12 @@ export class ListarPensamento implements OnInit{
   favoritos: boolean = false
   termoBusca: Subject<string> = new Subject<string>();
   listaFavoritos: PensamentoInterface[] = []
+  titulo: string = 'Meu Mural'
 
   constructor(
     private service: PensamentoService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ){}
 
   ngOnInit(){
@@ -103,6 +106,7 @@ export class ListarPensamento implements OnInit{
   }
 
   listarFavoritos(){
+    this.titulo = 'Meus Favoritos'
     this.paginaAtual = 1;
     this.haMaisPensamentos = true;
     this.carregandoMensagem = true;
@@ -112,6 +116,13 @@ export class ListarPensamento implements OnInit{
     .subscribe(listaPensamentosFavoritos => {
       this.listaPensamentos = listaPensamentosFavoritos;
       this.listaFavoritos = listaPensamentosFavoritos;
+      this.cdr.detectChanges();
     })
+  }
+
+  recarregarComponente() {
+    this.favoritos = false;
+    this.paginaAtual = 1;
+    this.router.navigate([this.router.url])
   }
 }
