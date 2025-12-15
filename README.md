@@ -84,3 +84,9 @@ For more information on using the Angular CLI, including detailed command refere
 - Implementar a funcionalidade de filtrar pensamentos;
 - Mostrar pensamentos filtrados dinamicamente à medida que o filtro é digitado.
 - Uso da bibliotecas debounceTime para melhoria de performance na consulta.
+
+### Branch feature-criar-favorito
+
+- Renderizar condicionalmente o ícone de favorito;
+- Utilizar chamadas de métodos dentro da interpolação;
+- Implementar a funcionalidade de ‘favoritar’ um pensamento.
