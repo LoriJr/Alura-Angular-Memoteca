@@ -13,7 +13,12 @@
       </div>
 
         <h2 class="ff-inter">Meu Mural</h2>
-        <button routerLink="/criarPensamento" class="botao">Adicionar pensamento</button>
+        <div class="botoes">
+          <button class="botao">Meu Mural</button>
+          <button class="botao">Meus Favoritos</button>
+          <button routerLink="/criarPensamento" class="botao">Adicionar pensamento</button>
+        </div>
+
     </header>
 
         @if (listaPensamentos.length > 0) {
