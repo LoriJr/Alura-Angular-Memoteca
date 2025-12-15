@@ -90,3 +90,9 @@ For more information on using the Angular CLI, including detailed command refere
 - Renderizar condicionalmente o ícone de favorito;
 - Utilizar chamadas de métodos dentro da interpolação;
 - Implementar a funcionalidade de ‘favoritar’ um pensamento.
+
+### Branch feature-filtrar-favoritos
+
+- Compartilhar informações entre componentes;
+- Recarregar um componente sem precisar recarregar a página;
+- Ajustar o título da página de acordo com o conteúdo acessado.
